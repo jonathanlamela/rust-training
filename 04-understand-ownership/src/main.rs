@@ -11,16 +11,17 @@ fn main() {
     let s1 = String::from("Hello");
     prendi_prestito(&s1);
 
-    let mut ioSonoUnaSlice = String::from("Hello");
-    ioSonoUnaSlice.push_str(", world!");
-    println!("{}", ioSonoUnaSlice);
-    println!("Lunghezza della stringa: {}", ioSonoUnaSlice.len());
-    println!("Capacità della stringa: {}", ioSonoUnaSlice.capacity());
-    println!("La stringa è vuota? {}", ioSonoUnaSlice.is_empty());
-    println!("Primi 4 caratteri: {}", &ioSonoUnaSlice[0..4]);
+    let mut io_sono_una_slice = String::from("Hello");
+    io_sono_una_slice.push_str(", world!");
+    println!("{}", io_sono_una_slice);
+    println!("Lunghezza della stringa: {}", io_sono_una_slice.len());
+    println!("Capacità della stringa: {}", io_sono_una_slice.capacity());
+    println!("La stringa è vuota? {}", io_sono_una_slice.is_empty());
+    println!("Primi 4 caratteri: {}", &io_sono_una_slice[0..4]);
 }
 
 // s viene postato come ownership quindi dopo non è accessibile
+#[allow(dead_code)]
 fn prendi_possesso(s: String) {
     println!("Prendo possesso di: {}", s);
 }
