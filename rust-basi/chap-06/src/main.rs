@@ -1,6 +1,6 @@
 fn main() {
     let number: u32 = 13;
-    let binary_representation: Vec<u8> = convert_to_binary(number);
+    let binary_representation: Vec<u8> = u32_to_binary(number);
 
     let string_representation: String = binary_representation
         .iter()
@@ -20,7 +20,7 @@ fn main() {
     );
 }
 
-fn convert_to_binary(n: u32) -> Vec<u8> {
+fn u32_to_binary(n: u32) -> Vec<u8> {
     let mut result: Vec<u8> = vec![];
     if n == 0 {
         result.push(0);
