@@ -15,7 +15,7 @@ fn main() {
 }
 
 fn convert_to_binary(n: u32) -> Vec<u8> {
-    let mut result: Vec<u8> = Vec::new();
+    let mut result: Vec<u8> = vec![];
     if n == 0 {
         result.push(0);
         return result;
