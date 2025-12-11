@@ -1,48 +1,48 @@
 fn main() {
-    // Quando si dichiara una costante è necessario specificare il tipo
+    // When declaring a constant, it is necessary to specify the type
     const Y: i32 = 10;
     println!("Y = {}", Y);
 
-    // Dichiarazione di una variabile mutabile
+    // Declaration of a mutable variable
     let mut x = 5;
     println!("X = {}", x);
     x = 6;
     println!("X = {}", x);
 
-    //Dichiarazione di una tupla
+    // Declaration of a tuple
     let tup: (i32, f64, String) = (1, 2.0, String::from("Hello"));
     println!("TUPLE = {:?}", tup);
 
-    // Dichiarazione di un array
+    // Declaration of an array
     let arr: [i32; 3] = [1, 2, 3];
     println!("ARRAY = {:?}", arr);
 
     my_function();
 
-    // Chiamata alla funzione sum
+    // Call to the sum function
     let result = sum(5, 10);
     println!("Sum of 5 and 10 is: {}", result);
 
-    //Espressioni di controllo
+    // Control expressions
     if 10 > 20 {
         println!("10 is greater than 20");
     } else {
         println!("10 is not greater than 20");
     }
 
-    // Ciclo for
+    // For loop
     for i in 0..5 {
         println!("Iteration: {}", i);
     }
 
-    // Ciclo while
+    // While loop
     let mut count = 0;
     while count < 5 {
         println!("Count: {}", count);
         count += 1;
     }
 
-    // Ciclo loop
+    // Loop with break
     let mut n = 0;
     loop {
         if n >= 5 {
@@ -52,11 +52,11 @@ fn main() {
         n += 1;
     }
 
-    // Loop che restituisce il valore di una variabile
+    // Loop that returns the value of a variable
     let mut m = 0;
     let result_loop = loop {
         if m >= 5 {
-            break m * 2; // Restituisce il valore di m moltiplicato
+            break m * 2; // Returns the value of m multiplied
         }
         m += 1;
     };
@@ -64,10 +64,10 @@ fn main() {
     println!("Result from loop: {}", result_loop);
 }
 
-//dichiarazione di una funzione
+// Declaration of a function
 fn my_function() {
-    // Questa funzione non fa nulla
-    // Puoi aggiungere il tuo codice qui
+    // This function does nothing
+    // You can add your code here
     println!("This is my function.");
 }
 

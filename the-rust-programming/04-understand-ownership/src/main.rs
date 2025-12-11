@@ -14,19 +14,19 @@ fn main() {
     let mut io_sono_una_slice = String::from("Hello");
     io_sono_una_slice.push_str(", world!");
     println!("{}", io_sono_una_slice);
-    println!("Lunghezza della stringa: {}", io_sono_una_slice.len());
-    println!("Capacità della stringa: {}", io_sono_una_slice.capacity());
-    println!("La stringa è vuota? {}", io_sono_una_slice.is_empty());
-    println!("Primi 4 caratteri: {}", &io_sono_una_slice[0..4]);
+    println!("Length of the string: {}", io_sono_una_slice.len());
+    println!("Capacity of the string: {}", io_sono_una_slice.capacity());
+    println!("Is the string empty? {}", io_sono_una_slice.is_empty());
+    println!("First 4 characters: {}", &io_sono_una_slice[0..4]);
 }
 
-// s viene postato come ownership quindi dopo non è accessibile
+// s is passed as ownership so it is no longer accessible afterwards
 #[allow(dead_code)]
 fn prendi_possesso(s: String) {
     println!("Prendo possesso di: {}", s);
 }
 
-// s viene passato come riferimento, quindi dopo è ancora accessibile
+// s is passed as a reference, so it is still accessible afterwards
 fn prendi_prestito(s: &String) {
-    println!("Prendo in prestito: {}", s);
+    println!("I am borrowing: {}", s);
 }

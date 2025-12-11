@@ -3,43 +3,43 @@ use std::cmp::Ordering;
 use std::io;
 
 fn main() {
-    println!("Indovina il numero!");
+    println!("Guess the number!");
 
-    //Genera un numero casuale da 1 e 100
+    //Generate a random number between 1 and 100
     let secret_number = rand::rng().random_range(1..=100);
 
     loop {
-        println!("Inserisci un numero");
+        println!("Enter a number");
 
-        //Stringa che conterrà l'input dell'utente
+        //String that will contain the user's input
         let mut guess = String::new();
 
-        //Legge l'input dell'utente
+        //Reads the user's input
         io::stdin()
             .read_line(&mut guess)
-            .expect("Errore nella lettura dell'input");
+            .expect("Error reading input");
 
-        //Informa l'utente del numero inserito
-        println!("Hai inserito: {}", guess);
+        //Informs the user of the entered number
+        println!("You entered: {}", guess);
 
-        //Converte l'input in un numero
-        //Se l'input non è un numero valido, stampa un messaggio di errore
+        //Converts the input to a number
+        //If the input is not a valid number, prints an error message
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => {
-                println!("Per favore, inserisci un numero valido.");
+                println!("Please enter a valid number.");
                 return;
             }
         };
 
-        //Confronta il numero inserito con il numero segreto
+        //Compares the entered number with the secret number
         match guess.cmp(&secret_number) {
             Ordering::Less => {
-                println!("Troppo basso!");
+                println!("Too low!");
             }
-            Ordering::Greater => println!("Troppo alto!"),
+            Ordering::Greater => println!("Too high!"),
             Ordering::Equal => {
-                println!("Hai indovinato!");
+                println!("You guessed it!");
                 break;
             }
         }
