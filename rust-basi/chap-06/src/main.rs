@@ -23,11 +23,7 @@ fn convert_to_binary(n: u32) -> Vec<u8> {
     let mut num: u32 = n;
 
     while num > 0 {
-        if num % 2 == 1 {
-            result.push(1);
-        } else {
-            result.push(0);
-        }
+        result.push((num % 2) as u8);
         num /= 2;
     }
     result
