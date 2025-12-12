@@ -8,7 +8,7 @@ enum Country {
 }
 
 fn main() {
-    let current_country = Country::Italia;
+    let current_country: Country = Country::Italia;
 
     match current_country {
         Country::Italia => println!("You're in Italy!"),
@@ -37,4 +37,14 @@ fn main() {
     if let Country::Portogallo = current_country {
         println!("Bem-vindo a Portugal!");
     }
+
+    if let Some(result) = test_function(10) {
+        println!("The result is: {}", result);
+    } else {
+        println!("No result returned.");
+    }
+}
+
+fn test_function(n: i32) -> Option<i32> {
+    if n % 2 == 0 { Some(n / 2) } else { None }
 }
