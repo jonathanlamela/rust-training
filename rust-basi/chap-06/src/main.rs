@@ -1,5 +1,5 @@
 fn main() {
-    let number: u32 = 13;
+    let number: u32 = 182;
     let binary_representation: Vec<u8> = u32_to_binary(number);
 
     let string_representation: String = binary_representation
@@ -17,6 +17,18 @@ fn main() {
     println!(
         "The reconstructed number from binary representation is {}",
         reconstructed_number
+    );
+
+    let hex_representation: String = u32_to_hex(number);
+    println!(
+        "The hexadecimal representation of {} is {}",
+        number, hex_representation
+    );
+
+    let reconstructed_from_hex: u32 = hex_to_u32(&hex_representation);
+    println!(
+        "The reconstructed number from hexadecimal representation is {}",
+        reconstructed_from_hex
     );
 }
 
@@ -52,6 +64,53 @@ fn binary_to_u32(bits: &[u8]) -> u32 {
         if bit == 1 {
             // 2 raised to the power of i
             result += 2u32.pow(i as u32);
+        }
+    }
+    result
+}
+
+fn u32_to_hex(n: u32) -> String {
+    // create a string to hold the hexadecimal representation
+    let mut result = String::new();
+
+    // hexadecimal characters
+    let hex_chars = "0123456789ABCDEF".chars().collect::<Vec<char>>();
+
+    let mut num = n;
+
+    // handle the case when n is 0
+    if num == 0 {
+        result.push('0');
+        return result;
+    }
+
+    while num > 0 {
+        // get the remainder when divided by 16
+        let remainder = (num % 16) as usize;
+
+        // prepend the corresponding hex character
+        result.push(hex_chars[remainder]);
+
+        // divide the number by 16 for the next iteration
+        num /= 16;
+    }
+
+    // reverse the string to get the correct order
+    result.chars().rev().collect()
+}
+
+fn hex_to_u32(hex: &str) -> u32 {
+    // hexadecimal characters
+    let hex_chars = "0123456789ABCDEF";
+    let mut result: u32 = 0;
+
+    // iterate over the hex string in reverse order
+    for (i, c) in hex.chars().rev().enumerate() {
+        // find the position of the character in the hex_chars string
+        if let Some(pos) = hex_chars.find(c) {
+            result += (pos as u32) * 16u32.pow(i as u32);
+        } else {
+            panic!("Invalid hexadecimal character: {}", c);
         }
     }
     result
