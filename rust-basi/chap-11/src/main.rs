@@ -15,4 +15,8 @@ fn main() {
     let person = config::Person::new("Alice", 30);
     println!("Person's name: {}", person.name());
     println!("Person's age: {}", person.age());
+
+    let box2 = Box::new(config::Person::new("Bob", 25));
+    println!("Boxed Person's name: {}", box2.name());
+    println!("Boxed Person's age: {}", box2.age());
 }
