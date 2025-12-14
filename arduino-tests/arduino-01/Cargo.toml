@@ -1,12 +1,12 @@
 [package]
-name = "test-01"
+name = "arduino-01"
 version = "0.1.0"
 authors = ["La Mela, Jonathan <jlamela@bethel.jw.org>"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
 
 [[bin]]
-name = "test-01"
+name = "arduino-01"
 test = false
 bench = false
 
