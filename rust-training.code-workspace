@@ -10,7 +10,5 @@
       "path": "arduino-tests"
     }
   ],
-  "settings": {
-    "codeQL.createQuery.qlPackLocation": "/Users/jonathanlamela/Desktop/personal-projects/rust-training/rust-basi"
-  }
+  "settings": {}
 }
