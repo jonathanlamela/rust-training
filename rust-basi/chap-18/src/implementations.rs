@@ -1,7 +1,4 @@
-pub struct Person {
-    name: String,
-    age: u32,
-}
+use crate::structs::Person;
 
 impl Person {
     pub fn new(name: String, age: u32) -> Self {
