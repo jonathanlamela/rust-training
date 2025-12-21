@@ -18,6 +18,21 @@ fn main() {
     println!("Capacity of the string: {}", io_sono_una_slice.capacity());
     println!("Is the string empty? {}", io_sono_una_slice.is_empty());
     println!("First 4 characters: {}", &io_sono_una_slice[0..4]);
+
+    let my_var = 2;
+    {
+        let mut my_second_var = my_var;
+        my_second_var += 3;
+        println!("Inner my_var: {}", my_second_var);
+    }
+    println!("Outer my_var: {}", my_var);
+
+    let my_string = String::from("Hello, world!");
+    {
+        let my_borrowed_string = &my_string;
+        println!("Borrowed string: {}", my_borrowed_string);
+    }
+    println!("Original string: {}", my_string);
 }
 
 // s is passed as ownership so it is no longer accessible afterwards
