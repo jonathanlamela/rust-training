@@ -5,9 +5,6 @@
     },
     {
       "path": "./the-rust-programming"
-    },
-    {
-      "path": "arduino-tests"
     }
   ],
   "settings": {}
